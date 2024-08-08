@@ -7,20 +7,24 @@ export default class Pricing {
   get amount() {
     return this._amount;
   }
-  set amount(N) {
-      this.amount = N;
+
+  set amount(a) {
+    this._amount = a;
   }
+
   get currency() {
     return this._currency;
   }
-  set currency(C) {
-      this.currency = C;
+
+  set currency(c) {
+    this._currency = c;
   }
 
-  displayFullPrice(){
-    return `${this.amount} ${this.currency_name} (${this.currency_code})`
+  displayFullPrice() {
+    return `${this.amount} ${this.currency._name} (${this.currency._code})`;
   }
-  convertPrice (amount, conversionRate){
-    return amount * conversionRate
+
+  static convertPrice(amount, conversionRate) {
+    return (amount * conversionRate);
   }
 }
