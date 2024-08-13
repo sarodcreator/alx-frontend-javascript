@@ -1,9 +1,10 @@
 export default function hasValuesFromArray(set, array) {
-  verdict = false;
+  let verdict = true;
   array.map((x) => {
-    if (set.has(array)) {
-    verdict = true;
+    if (!set.has(x)) {
+      verdict = false;
     }
   });
+
   return verdict;
 }
